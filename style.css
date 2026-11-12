@@ -1,0 +1,107 @@
+:root {
+    --bg: #0b1220;
+    --surface: #141c2e;
+    --surface-2: #1c2640;
+    --text: #e8eefc;
+    --muted: #8b9bb4;
+    --accent: #3b82f6;
+    --accent-2: #6366f1;
+    --green: #22c55e;
+    --purple: #a855f7;
+  }
+  * { box-sizing: border-box; }
+  body { 
+    font-family: 'Outfit', sans-serif; 
+    margin: 0; background: var(--bg); color: var(--text); 
+    line-height: 1.5;
+    position: relative;
+  }
+  /* background texture removed for cleaner repo */
+  header, .screen { position: relative; z-index: 1; }
+  header {
+    background: rgba(11,18,32,0.85); backdrop-filter: blur(16px);
+    padding: 12px 20px; display: flex; align-items: center; justify-content: space-between;
+    position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .logo-name {
+    display: flex; align-items: center; gap: 0; cursor: pointer;
+  }
+  .logo-img {
+    height: 36px; width: auto; margin-right: -2px;
+  }
+  .logo-text {
+    font-family: 'Syne', sans-serif; font-size: 1.35rem; font-weight: 800;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  nav { display: flex; gap: 6px; }
+  nav button {
+    background: transparent; border: none; color: var(--muted); padding: 8px 14px;
+    border-radius: 10px; font-size: 0.92rem; font-weight: 500; cursor: pointer;
+  }
+  nav button.active, nav button:hover { background: var(--surface-2); color: var(--text); }
+  .screen { display: none; padding: 24px 20px 40px; max-width: 960px; margin: 0 auto; }
+  .screen.active { display: block; }
+  h1 { font-size: 1.8rem; margin: 0 0 8px; font-weight: 600; }
+  .subtitle { color: var(--muted); margin: 0 0 20px; }
+  .card {
+    background: var(--surface); border-radius: 18px; padding: 18px; margin: 12px 0;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .map-controls {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; align-items: center;
+  }
+  select, input, button.primary, button.secondary {
+    padding: 10px 14px; border-radius: 12px; border: none; font-size: 0.95rem;
+    font-family: inherit; background: var(--surface-2); color: var(--text);
+  }
+  button.primary {
+    background: linear-gradient(135deg, var(--accent), var(--accent-2)); color: white; font-weight: 500; cursor: pointer;
+  }
+  button.secondary { cursor: pointer; }
+  #map { height: 62vh; border-radius: 18px; }
+  .search-box { position: relative; flex: 1; min-width: 180px; }
+  .suggestions {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: var(--surface-2); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4); z-index: 20; display: none;
+  }
+  .suggestion { padding: 10px 14px; cursor: pointer; }
+  .suggestion:hover { background: #2a3650; }
+  .nearest-item {
+    display: flex; justify-content: space-between; align-items: center;
+    background: var(--surface-2); border-radius: 12px; padding: 12px 14px; margin: 8px 0;
+  }
+  .free { color: var(--green); font-weight: 600; }
+  .garage { color: var(--purple); font-weight: 600; }
+  .hero {
+    text-align: center; padding: 36px 20px 16px;
+  }
+  .hero-logo {
+    display: flex; align-items: center; justify-content: center; gap: 0; margin: 0;
+  }
+  .hero-logo img {
+    height: 78px; width: auto; margin-right: -3px;
+  }
+  .hero-logo-text {
+    font-family: 'Syne', sans-serif; font-size: 3.1rem; font-weight: 800; letter-spacing: -1.2px;
+    background: linear-gradient(90deg, #60a5fa, #a78bfa, #34d399);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-tagline {
+    font-size: 1.15rem; color: var(--muted); margin: 6px 0 20px; font-weight: 300;
+  }
+  .street-gallery {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 18px;
+  }
+  .street-gallery img {
+    width: 100%; height: 160px; object-fit: cover; border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .cta { margin-top: 24px; }
+  .cta button { padding: 16px 32px; font-size: 1.05rem; border-radius: 16px; }
+  @media (max-width: 700px) {
+    .street-gallery { grid-template-columns: 1fr; }
+    .street-gallery img { height: 180px; }
+    .hero-logo-text { font-size: 2.4rem; }
+  }
